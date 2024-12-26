@@ -13,12 +13,23 @@ namespace Demo.Operators_Overloading
 
 
         #region Opeartor Overloading
-        public static Complex operator + (Complex Left, Complex Right)
+        ///public static Complex operator + (Complex Left, Complex Right)
+        ///{
+        ///    return new Complex()
+        /// <summary>
+        /// public static Complex operator + (Complex Left, Complex Right)
+        /// </summary>
+        /// <returns></returns>   //        Imag = Left.Imag + Right.Imag
+        ///   };
+        ///}
+        ///
+         
+        public static Complex operator ++ (Complex C)
         {
             return new Complex()
             {
-                Real = Left.Real + Right.Real,
-                Imag = Left.Imag + Right.Imag
+                Real = (C?.Real ?? 0) + 1,
+                Imag = (C?.Imag ?? 0)
             };
         }
         #endregion
