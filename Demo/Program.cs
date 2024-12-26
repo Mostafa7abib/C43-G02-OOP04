@@ -12,7 +12,7 @@ namespace Demo
         {
             if (series is null)
                 return;
-            for (int i = 0; i<= 10; i++)
+            for (int i = 0; i <= 10; i++)
             {
                 Console.Write($"{series.Current} \t");
                 series.GetNext();
@@ -82,21 +82,38 @@ namespace Demo
             //Console.WriteLine($"NAmes02.GetHashCode() : {Names02.GetHashCode()}"); 
             #endregion
 
-            Employee employee01 = new Employee() { Id = 10 , Name = "Ahmed" , Salary = 8_000 , Department = new Department() {Code = 1001 , Title = "Sales"} }; 
-            Employee employee02 = new Employee() { Id = 20, Name = "Omnia", Salary = 4_000 , Department = new Department() {Code = 2002 , Title = "HR"} };
-            Console.WriteLine($"employee01.GetHashCode()==> {employee01.GetHashCode()}");
-            Console.WriteLine($"employee02.GetHashCode()==> {employee02.GetHashCode()}");
+            #region Video 7
+            //Employee employee01 = new Employee() { Id = 10 , Name = "Ahmed" , Salary = 8_000 , Department = new Department() {Code = 1001 , Title = "Sales"} }; 
+            //Employee employee02 = new Employee() { Id = 20, Name = "Omnia", Salary = 4_000 , Department = new Department() {Code = 2002 , Title = "HR"} };
+            //Console.WriteLine($"employee01.GetHashCode()==> {employee01.GetHashCode()}");
+            //Console.WriteLine($"employee02.GetHashCode()==> {employee02.GetHashCode()}");
 
-            employee02 = (Employee) employee01.Clone();
+            //employee02 = (Employee) employee01.Clone();
 
-            employee02 = new Employee(employee01);
-            Console.WriteLine("After Deep Copy");
-            Console.WriteLine($"employee01.GetHashCode()==> {employee01.GetHashCode()}");
-            Console.WriteLine($"employee02.GetHashCode()==> {employee02.GetHashCode()}");
+            //employee02 = new Employee(employee01);
+            //Console.WriteLine("After Deep Copy");
+            //Console.WriteLine($"employee01.GetHashCode()==> {employee01.GetHashCode()}");
+            //Console.WriteLine($"employee02.GetHashCode()==> {employee02.GetHashCode()}");
 
-            Console.WriteLine("*******************");
-            Console.WriteLine($"Employee01==> {employee01}");
-            Console.WriteLine($"Employee02==> {employee01}");
+            //Console.WriteLine("*******************");
+            //Console.WriteLine($"Employee01==> {employee01}");
+            //Console.WriteLine($"Employee02==> {employee01}"); 
+            #endregion
+
+            Employee[] employees =
+            {
+                new Employee(){Id = 10, Name = "Ahmed" , Salary = 8_000},
+                new Employee(){Id = 20, Name = "Omnia" , Salary = 2_000},
+                new Employee(){Id = 30, Name = "Mostafa" , Salary = 10_000},
+                new Employee(){Id = 40, Name = "Omar" , Salary = 9_000},
+
+            };
+
+            Array.Sort(employees);
+            foreach (Employee employee in employees)
+            {
+                Console.WriteLine(employee);
+            }
         }
     } 
 }
