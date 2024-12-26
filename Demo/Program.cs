@@ -1,4 +1,5 @@
-﻿using Demo.Inteface_Example_03;
+﻿using System.ComponentModel;
+using Demo.Inteface_Example_03;
 using Demo.Interface_Example_01;
 using Demo.Interface_Example_02;
 
@@ -50,21 +51,33 @@ namespace Demo
             //flyable.Forward();
             #endregion
 
-            int[] Arr01 = [1,2,3];
-            int[] Arr02 = [4,5,6];
-            Console.WriteLine($"Arr01.GetHashCode() : {Arr01.GetHashCode()}"); 
-            Console.WriteLine($"Arr02.GetHashCode() : {Arr02.GetHashCode()}");
+            #region Video 5
+            //int[] Arr01 = [1,2,3];
+            //int[] Arr02 = [4,5,6];
+            //Console.WriteLine($"Arr01.GetHashCode() : {Arr01.GetHashCode()}"); 
+            //Console.WriteLine($"Arr02.GetHashCode() : {Arr02.GetHashCode()}");
 
-            Arr02 = Arr01; // this object [1,2,3] has 2 references [Arr01,Arr02] , [4,5,6] became unreachable object.
-            //Console.WriteLine("After Shallow Copy");
-            Console.WriteLine("After Deep Copy");
-            Arr02 = (int[])Arr01.Clone();
-            Console.WriteLine($"Arr01.GetHashCode() : {Arr01.GetHashCode()}");
-            Console.WriteLine($"Arr02.GetHashCode() : {Arr02.GetHashCode()}");
-            Arr02[0] = 100;
-            foreach (int number in Arr01)
-                Console.WriteLine(number);
-            Console.WriteLine("******************");
+            //Arr02 = Arr01; // this object [1,2,3] has 2 references [Arr01,Arr02] , [4,5,6] became unreachable object.
+            ////Console.WriteLine("After Shallow Copy");
+            //Console.WriteLine("After Deep Copy");
+            //Arr02 = (int[])Arr01.Clone();
+            //Console.WriteLine($"Arr01.GetHashCode() : {Arr01.GetHashCode()}");
+            //Console.WriteLine($"Arr02.GetHashCode() : {Arr02.GetHashCode()}");
+            //Arr02[0] = 100;
+            //foreach (int number in Arr01)
+            //    Console.WriteLine(number);
+            //Console.WriteLine("******************"); 
+            #endregion
+
+            string[] Names01 = ["Amr", "Mona"];
+            string[] Names02 = ["Ahmed" , "Yassmin"];
+            Console.WriteLine($"NAmes01.GetHashCode() : {Names01.GetHashCode()}");
+            Console.WriteLine($"NAmes02.GetHashCode() : {Names02.GetHashCode()}");
+
+            Names02 = (String[]) Names01.Clone();
+            Console.WriteLine("*************After Deep Copy************");
+            Console.WriteLine($"NAmes01.GetHashCode() : {Names01.GetHashCode()}");
+            Console.WriteLine($"NAmes02.GetHashCode() : {Names02.GetHashCode()}");
         }
     } 
 }
