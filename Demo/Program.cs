@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using Demo.Built_In_Interfaces;
 using Demo.Inteface_Example_03;
 using Demo.Interface_Example_01;
 using Demo.Interface_Example_02;
@@ -69,15 +70,33 @@ namespace Demo
             //Console.WriteLine("******************"); 
             #endregion
 
-            string[] Names01 = ["Amr", "Mona"];
-            string[] Names02 = ["Ahmed" , "Yassmin"];
-            Console.WriteLine($"NAmes01.GetHashCode() : {Names01.GetHashCode()}");
-            Console.WriteLine($"NAmes02.GetHashCode() : {Names02.GetHashCode()}");
+            #region Video 6 
+            //string[] Names01 = ["Amr", "Mona"];
+            //string[] Names02 = ["Ahmed" , "Yassmin"];
+            //Console.WriteLine($"NAmes01.GetHashCode() : {Names01.GetHashCode()}");
+            //Console.WriteLine($"NAmes02.GetHashCode() : {Names02.GetHashCode()}");
 
-            Names02 = (String[]) Names01.Clone();
-            Console.WriteLine("*************After Deep Copy************");
-            Console.WriteLine($"NAmes01.GetHashCode() : {Names01.GetHashCode()}");
-            Console.WriteLine($"NAmes02.GetHashCode() : {Names02.GetHashCode()}");
+            //Names02 = (String[]) Names01.Clone();
+            //Console.WriteLine("*************After Deep Copy************");
+            //Console.WriteLine($"NAmes01.GetHashCode() : {Names01.GetHashCode()}");
+            //Console.WriteLine($"NAmes02.GetHashCode() : {Names02.GetHashCode()}"); 
+            #endregion
+
+            Employee employee01 = new Employee() { Id = 10 , Name = "Ahmed" , Salary = 8_000 , Department = new Department() {Code = 1001 , Title = "Sales"} }; 
+            Employee employee02 = new Employee() { Id = 20, Name = "Omnia", Salary = 4_000 , Department = new Department() {Code = 2002 , Title = "HR"} };
+            Console.WriteLine($"employee01.GetHashCode()==> {employee01.GetHashCode()}");
+            Console.WriteLine($"employee02.GetHashCode()==> {employee02.GetHashCode()}");
+
+            employee02 = (Employee) employee01.Clone();
+
+            employee02 = new Employee(employee01);
+            Console.WriteLine("After Deep Copy");
+            Console.WriteLine($"employee01.GetHashCode()==> {employee01.GetHashCode()}");
+            Console.WriteLine($"employee02.GetHashCode()==> {employee02.GetHashCode()}");
+
+            Console.WriteLine("*******************");
+            Console.WriteLine($"Employee01==> {employee01}");
+            Console.WriteLine($"Employee02==> {employee01}");
         }
     } 
 }
