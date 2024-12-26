@@ -1,4 +1,5 @@
-﻿using Demo.Interface_Example_01;
+﻿using Demo.Inteface_Example_03;
+using Demo.Interface_Example_01;
 using Demo.Interface_Example_02;
 
 namespace Demo
@@ -32,12 +33,20 @@ namespace Demo
             //refFromInterface.Print();
             #endregion
 
-            SeriesByTwo seriesByTwo = new SeriesByTwo();
-            PrintTenNumbersFromSeries(seriesByTwo);
-            SeriesByThree seriesByThree = new SeriesByThree();  
-            PrintTenNumbersFromSeries(seriesByThree);
-            SeriesByFour seriesByFour = new SeriesByFour();
-            PrintTenNumbersFromSeries(seriesByFour);
+            #region Video 3
+            //SeriesByTwo seriesByTwo = new SeriesByTwo();
+            //PrintTenNumbersFromSeries(seriesByTwo);
+            //SeriesByThree seriesByThree = new SeriesByThree();  
+            //PrintTenNumbersFromSeries(seriesByThree);
+            //SeriesByFour seriesByFour = new SeriesByFour();
+            //PrintTenNumbersFromSeries(seriesByFour); 
+            #endregion
+
+            IMovable movable = new Airplane();
+            movable.Forward();
+
+            IFlyable flyable = new Airplane();
+            flyable.Forward();
         }
     } 
 }
